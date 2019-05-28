@@ -71,3 +71,29 @@ end
 initial
   $monitor($time, " Output q = %d", 1);
 
+endmodule
+
+//----------------------------------- 系统任务 --------------------------------------
+//.................................  $display  ..............................
+// 显示字符串
+$display("Hello Verilog World");
+
+// 显示当前的仿真时间
+$display($time)
+
+// 显示虚拟地址
+reg [0:40] virtual_addr;
+$display("At time %d virtual address is %h", $time, virtual_addr);
+
+// 用二进制数显示port_id
+$display("ID of the port is %b", port_id);
+
+// 显示x字符，用二进制数显示四位总线bus的信号值
+reg [3:0] bus;
+$display("Bus value is %b", bus)
+
+// 在名为top的最高模块中显示在该层被调用的实例p1的层次名
+$display("This string is displayed from %m level of hierarchy");
+
+// 显示特殊字符：换行和%号
+$display("This is a \n multiline string with a %% sign");
